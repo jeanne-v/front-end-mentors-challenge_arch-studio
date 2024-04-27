@@ -1,0 +1,291 @@
+// GEN STYLES
+
+* {
+  box-sizing: border-box;
+}
+
+$font-main: "League Spartan", sans-serif;
+
+$color-bg-primary: #ffffff;
+$color-bg-secondary: #eeeff4;
+
+$color-text-primary: #60636d;
+$color-text-secondary: #1b1d23;
+$color-text-tertiary: #eeeff4;
+$color-text-link: #7d828f;
+$color-text-inverted: #ffffff;
+
+$color-accent: #1b1d23;
+$color-accent-light: #60636d;
+$color-accent-extra-light: #c8ccd8;
+
+:root {
+  --spacing: 32px;
+}
+
+body {
+  margin: 0;
+  background-color: $color-bg-primary;
+  font-family: $font-main;
+  font-weight: 500;
+  color: $color-text-primary;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5rem; /* 24px */
+}
+
+h1,
+h2 {
+  color: $color-text-secondary;
+}
+
+// HEADER
+
+.header {
+  padding: var(--spacing);
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 32px;
+  }
+
+  &__open-menu-btn {
+    cursor: pointer;
+    padding: 0;
+    border: none;
+  }
+
+  &__hamburger-icon,
+  &__logo {
+    vertical-align: middle;
+  }
+}
+
+// FOOTER
+
+.footer {
+  background-color: $color-bg-secondary;
+  padding: 0 var(--spacing) 48px;
+  text-align: center;
+
+  &__logo-container {
+    background-color: $color-accent;
+    display: flex;
+    height: 120px;
+    width: 120px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto -60px;
+    position: relative;
+    top: -60px;
+  }
+
+  &__logo {
+    width: 58px;
+  }
+
+  &__nav {
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 1.5625rem; /* 25px */
+    color: $color-text-link;
+  }
+}
+
+// MOBILE NAV
+
+.mobile-nav {
+  display: none;
+}
+
+// BTN LINKS
+
+.btn-link {
+  text-decoration: none;
+  line-height: 1.5625rem; /* 25px */
+  font-weight: 700;
+  background-color: $color-accent;
+  color: $color-text-inverted;
+  padding: 25px 32px 22px 37px;
+  display: inline-block;
+
+  &__arrow {
+    margin-left: 24px;
+    vertical-align: middle;
+    width: 24px;
+    height: 18px;
+  }
+
+  &:hover {
+    background-color: $color-accent-light;
+  }
+
+  &:active {
+    background-color: $color-accent-extra-light;
+  }
+
+  .section--homepage-team & {
+    padding-left: 35px;
+  }
+
+  .section--homepage-featured & {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// MAIN && SECTIONS
+
+.main {
+  margin-bottom: 132px;
+}
+
+.section {
+  &__heading {
+    margin: 0;
+    font-size: 3rem; /* 48px */
+    line-height: 3.25rem; /* 52px */
+    letter-spacing: -1.71px;
+  }
+
+  &--full-bg {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+%withline {
+  &::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 65px;
+    background-color: #c8ccd8;
+    margin-bottom: 68px;
+  }
+}
+
+// HOMEPAGE SPECIFIC STYLES
+
+.section--homepage-project {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url(images/image-hero-paramour-375.jpg);
+  padding: 116px var(--spacing) 110px;
+
+  p {
+    margin: 10px 0 84px;
+  }
+
+  h2 {
+    line-height: 1;
+    letter-spacing: -1.2px;
+  }
+}
+
+.section--homepage-welcome {
+  margin: 72px var(--spacing) 113px;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  p:first-of-type {
+    margin-top: 22px;
+  }
+
+  p + p {
+    margin-top: 1.5rem; /* 24px */
+  }
+
+  @extend %withline;
+}
+
+.section--homepage-team {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url(images/image-small-team-375.jpg);
+  padding: 181px var(--spacing) 180px;
+
+  .btn-link {
+    margin-top: 23px;
+  }
+}
+
+.section--homepage-featured {
+  margin: 73px var(--spacing) 0;
+
+  .portfolio-projects-container {
+    margin: 43px 0 24px;
+  }
+}
+
+.section--homepage-project,
+.section--homepage-team {
+  p,
+  h2 {
+    color: $color-text-inverted;
+  }
+}
+
+// PORTFOLIO PROJECTS
+
+.portfolio-project {
+  height: 240px;
+  display: block;
+  color: $color-text-inverted;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  padding: 0 24px 23px;
+
+  &__heading,
+  &__text {
+    margin: 0;
+  }
+
+  &__heading {
+    font-size: 2rem; /* 32px */
+    line-height: 1.25;
+  }
+
+  &__text {
+    opacity: 75%;
+  }
+}
+
+@mixin project-bg($url) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)),
+    url($url);
+}
+
+// backgrounds
+.portfolio-project {
+  &--del-sol {
+    @include project-bg("images/image-del-sol-311.jpg");
+  }
+
+  &--228B {
+    @include project-bg("images/image-228b-311.jpg");
+  }
+
+  &--prototype {
+    @include project-bg("images/image-prototype-311.jpg");
+  }
+}
+
+.portfolio-projects-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}

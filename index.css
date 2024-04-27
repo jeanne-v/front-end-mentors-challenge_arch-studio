@@ -2,7 +2,216 @@
   box-sizing: border-box;
 }
 
+:root {
+  --spacing: 32px;
+}
+
 body {
   margin: 0;
+  background-color: #ffffff;
   font-family: "League Spartan", sans-serif;
+  font-weight: 500;
+  color: #60636d;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5rem; /* 24px */
 }
+
+h1,
+h2 {
+  color: #1b1d23;
+}
+
+.header {
+  padding: var(--spacing);
+}
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo {
+  height: 32px;
+}
+.header__open-menu-btn {
+  cursor: pointer;
+  padding: 0;
+  border: none;
+}
+.header__hamburger-icon, .header__logo {
+  vertical-align: middle;
+}
+
+.footer {
+  background-color: #eeeff4;
+  padding: 0 var(--spacing) 48px;
+  text-align: center;
+}
+.footer__logo-container {
+  background-color: #1b1d23;
+  display: flex;
+  height: 120px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto -60px;
+  position: relative;
+  top: -60px;
+}
+.footer__logo {
+  width: 58px;
+}
+.footer__nav {
+  margin: 32px 0;
+  display: flex;
+  flex-direction: column;
+  row-gap: 32px;
+}
+.footer__nav-link {
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1.5625rem; /* 25px */
+  color: #7d828f;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+.btn-link {
+  text-decoration: none;
+  line-height: 1.5625rem; /* 25px */
+  font-weight: 700;
+  background-color: #1b1d23;
+  color: #ffffff;
+  padding: 25px 32px 22px 37px;
+  display: inline-block;
+}
+.btn-link__arrow {
+  margin-left: 24px;
+  vertical-align: middle;
+  width: 24px;
+  height: 18px;
+}
+.btn-link:hover {
+  background-color: #60636d;
+}
+.btn-link:active {
+  background-color: #c8ccd8;
+}
+.section--homepage-team .btn-link {
+  padding-left: 35px;
+}
+.section--homepage-featured .btn-link {
+  width: 100%;
+  text-align: center;
+}
+
+.main {
+  margin-bottom: 132px;
+}
+
+.section__heading {
+  margin: 0;
+  font-size: 3rem; /* 48px */
+  line-height: 3.25rem; /* 52px */
+  letter-spacing: -1.71px;
+}
+.section--full-bg {
+  background-size: cover;
+  background-position: center;
+}
+
+.section--homepage-welcome::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 65px;
+  background-color: #c8ccd8;
+  margin-bottom: 68px;
+}
+
+.section--homepage-project {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(images/image-hero-paramour-375.jpg);
+  padding: 116px var(--spacing) 110px;
+}
+.section--homepage-project p {
+  margin: 10px 0 84px;
+}
+.section--homepage-project h2 {
+  line-height: 1;
+  letter-spacing: -1.2px;
+}
+
+.section--homepage-welcome {
+  margin: 72px var(--spacing) 113px;
+}
+.section--homepage-welcome p {
+  margin-bottom: 0;
+}
+.section--homepage-welcome p:first-of-type {
+  margin-top: 22px;
+}
+.section--homepage-welcome p + p {
+  margin-top: 1.5rem; /* 24px */
+}
+
+.section--homepage-team {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(images/image-small-team-375.jpg);
+  padding: 181px var(--spacing) 180px;
+}
+.section--homepage-team .btn-link {
+  margin-top: 23px;
+}
+
+.section--homepage-featured {
+  margin: 73px var(--spacing) 0;
+}
+.section--homepage-featured .portfolio-projects-container {
+  margin: 43px 0 24px;
+}
+
+.section--homepage-project p,
+.section--homepage-project h2,
+.section--homepage-team p,
+.section--homepage-team h2 {
+  color: #ffffff;
+}
+
+.portfolio-project {
+  height: 240px;
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  padding: 0 24px 23px;
+}
+.portfolio-project__heading, .portfolio-project__text {
+  margin: 0;
+}
+.portfolio-project__heading {
+  font-size: 2rem; /* 32px */
+  line-height: 1.25;
+}
+.portfolio-project__text {
+  opacity: 75%;
+}
+
+.portfolio-project--del-sol {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-del-sol-311.jpg");
+}
+.portfolio-project--228B {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-228b-311.jpg");
+}
+.portfolio-project--prototype {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-prototype-311.jpg");
+}
+
+.portfolio-projects-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+/*# sourceMappingURL=index.css.map */
