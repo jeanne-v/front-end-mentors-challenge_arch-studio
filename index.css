@@ -116,12 +116,11 @@ h2 {
   line-height: 3.25rem; /* 52px */
   letter-spacing: -1.71px;
 }
-.section--full-bg {
-  background-size: cover;
-  background-position: center;
+.section__heading span {
+  display: block;
 }
 
-.section--homepage-welcome::before {
+.section--about-heritage::before, .section--homepage-welcome::before {
   content: "";
   display: block;
   height: 1px;
@@ -130,8 +129,20 @@ h2 {
   margin-bottom: 68px;
 }
 
+.section--about-heritage p, .section--homepage-welcome p {
+  margin-bottom: 0;
+}
+.section--about-heritage p:first-of-type, .section--homepage-welcome p:first-of-type {
+  margin-top: 22px;
+}
+.section--about-heritage p + p, .section--homepage-welcome p + p {
+  margin-top: 1.5rem; /* 24px */
+}
+
 .section--homepage-project {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(images/image-hero-paramour-375.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("images/image-hero-paramour-375.jpg");
+  background-size: cover;
+  background-position: center;
   padding: 116px var(--spacing) 110px;
 }
 .section--homepage-project p {
@@ -145,18 +156,9 @@ h2 {
 .section--homepage-welcome {
   margin: 72px var(--spacing) 113px;
 }
-.section--homepage-welcome p {
-  margin-bottom: 0;
-}
-.section--homepage-welcome p:first-of-type {
-  margin-top: 22px;
-}
-.section--homepage-welcome p + p {
-  margin-top: 1.5rem; /* 24px */
-}
 
 .section--homepage-team {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(images/image-small-team-375.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/image-small-team-375.jpg");
   padding: 181px var(--spacing) 180px;
 }
 .section--homepage-team .btn-link {
@@ -175,6 +177,93 @@ h2 {
 .section--homepage-team p,
 .section--homepage-team h2 {
   color: #ffffff;
+}
+
+.section--secondary-page-intro {
+  margin-bottom: -45px;
+}
+
+.section__bg-container {
+  height: 240px;
+}
+.section--about-intro .section__bg-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("images/about-hero-375.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.section__fg-container {
+  background-color: #ffffff;
+  position: relative;
+  top: -45px;
+  padding: 65px 0 0 var(--spacing);
+  margin-right: var(--spacing);
+}
+.section__fg-container p {
+  margin: 21px 0 0;
+}
+
+.section--about-heritage {
+  margin: 76px var(--spacing) 112px;
+}
+
+.section--about-leaders {
+  margin: 0 var(--spacing) 0;
+  padding-bottom: 47px;
+}
+
+.team-members-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 79px;
+  margin-top: 55px;
+}
+
+.team-member__image-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+.team-member__image {
+  width: 100%;
+  display: block;
+}
+.team-member__socials {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  height: fit-content;
+  display: none;
+}
+.team-member__social-link {
+  text-decoration: none;
+}
+.team-member__social-link img {
+  vertical-align: middle;
+}
+.team-member__social-link + .team-member__social-link {
+  margin-left: 32px;
+}
+.team-member__name, .team-member__position {
+  margin: 0;
+  color: #1b1d23;
+}
+.team-member__name {
+  font-size: 2rem; /* 32px */
+  line-height: 1.25;
+}
+.team-member__position {
+  opacity: 75%;
+}
+
+.team-member__image-container:hover .team-member__image {
+  filter: brightness(0.5);
+}
+.team-member__image-container:hover .team-member__socials {
+  display: block;
 }
 
 .portfolio-project {

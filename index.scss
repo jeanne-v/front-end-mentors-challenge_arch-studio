@@ -157,11 +157,10 @@ h2 {
     font-size: 3rem; /* 48px */
     line-height: 3.25rem; /* 52px */
     letter-spacing: -1.71px;
-  }
 
-  &--full-bg {
-    background-size: cover;
-    background-position: center;
+    span {
+      display: block;
+    }
   }
 }
 
@@ -176,11 +175,31 @@ h2 {
   }
 }
 
-// HOMEPAGE SPECIFIC STYLES
+%para-group {
+  p {
+    margin-bottom: 0;
+  }
+
+  p:first-of-type {
+    margin-top: 22px;
+  }
+
+  p + p {
+    margin-top: 1.5rem; /* 24px */
+  }
+}
+
+@mixin hero-bg($url) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+    url($url);
+  background-size: cover;
+  background-position: center;
+}
+
+// HOMEPAGE SECTIONS SPECIFIC STYLES
 
 .section--homepage-project {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url(images/image-hero-paramour-375.jpg);
+  @include hero-bg("images/image-hero-paramour-375.jpg");
   padding: 116px var(--spacing) 110px;
 
   p {
@@ -195,25 +214,13 @@ h2 {
 
 .section--homepage-welcome {
   margin: 72px var(--spacing) 113px;
-
-  p {
-    margin-bottom: 0;
-  }
-
-  p:first-of-type {
-    margin-top: 22px;
-  }
-
-  p + p {
-    margin-top: 1.5rem; /* 24px */
-  }
-
   @extend %withline;
+  @extend %para-group;
 }
 
 .section--homepage-team {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url(images/image-small-team-375.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("images/image-small-team-375.jpg");
   padding: 181px var(--spacing) 180px;
 
   .btn-link {
@@ -234,6 +241,113 @@ h2 {
   p,
   h2 {
     color: $color-text-inverted;
+  }
+}
+
+// SECONDARY PAGES HERO SECTION
+
+.section--secondary-page-intro {
+  margin-bottom: -45px;
+}
+
+.section__bg-container {
+  height: 240px;
+
+  .section--about-intro & {
+    @include hero-bg("images/about-hero-375.jpg");
+  }
+}
+
+.section__fg-container {
+  background-color: $color-bg-primary;
+  position: relative;
+  top: -45px;
+  padding: 65px 0 0 var(--spacing);
+  margin-right: var(--spacing);
+
+  p {
+    margin: 21px 0 0;
+  }
+}
+
+// ABOUT PAGE SECTION SPECIFIC STYLES
+
+.section--about-heritage {
+  margin: 76px var(--spacing) 112px;
+  @extend %withline;
+  @extend %para-group;
+}
+
+.section--about-leaders {
+  margin: 0 var(--spacing) 0;
+  padding-bottom: 47px;
+}
+
+.team-members-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 79px;
+  margin-top: 55px;
+}
+
+.team-member {
+  &__image-container {
+    position: relative;
+    margin-bottom: 15px;
+  }
+
+  &__image {
+    width: 100%;
+    display: block;
+  }
+
+  &__socials {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: fit-content;
+    height: fit-content;
+    display: none;
+  }
+
+  &__social-link {
+    text-decoration: none;
+
+    img {
+      vertical-align: middle;
+    }
+
+    & + & {
+      margin-left: 32px;
+    }
+  }
+
+  &__name,
+  &__position {
+    margin: 0;
+    color: $color-text-secondary;
+  }
+
+  &__name {
+    font-size: 2rem; /* 32px */
+    line-height: 1.25;
+  }
+
+  &__position {
+    opacity: 75%;
+  }
+}
+
+.team-member__image-container:hover {
+  .team-member__image {
+    filter: brightness(0.5);
+  }
+
+  .team-member__socials {
+    display: block;
   }
 }
 
