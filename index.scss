@@ -5,6 +5,12 @@
 }
 
 $font-main: "League Spartan", sans-serif;
+$font-secondary: "Spartan";
+
+@font-face {
+  font-family: "Spartan";
+  src: url(Spartan-Bold.ttf);
+}
 
 $color-bg-primary: #ffffff;
 $color-bg-secondary: #eeeff4;
@@ -21,6 +27,18 @@ $color-accent-extra-light: #c8ccd8;
 
 :root {
   --spacing: 32px;
+}
+
+@media (min-width: 700px) and (max-width: 999.5px) {
+  :root {
+    --spacing: 58px;
+  }
+}
+
+@media (min-width: 1000px) {
+  :root {
+    --spacing: 190px;
+  }
 }
 
 body {
@@ -42,12 +60,7 @@ h2 {
 
 .header {
   padding: var(--spacing);
-  position: fixed;
-  z-index: 99;
   background-color: $color-bg-primary;
-  top: 0;
-  left: 0;
-  width: 100%;
 
   &__content {
     display: flex;
@@ -71,6 +84,73 @@ h2 {
   }
 }
 
+@media (max-width: 699.5px) {
+  .header {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    &__nav {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .header {
+    padding: 56px 98px;
+
+    &__content {
+      justify-content: flex-start;
+    }
+
+    &__logo {
+      height: 40px;
+    }
+
+    &__open-menu-btn {
+      display: none;
+    }
+
+    &__nav {
+      display: flex;
+      gap: 56px;
+    }
+
+    &__link {
+      text-decoration: none;
+      font-weight: 700;
+      color: $color-text-link;
+      line-height: 1.5625rem; /* 25px */
+      display: inline-block;
+      margin-top: 3px;
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999.5px) {
+  .header {
+    &__content {
+      column-gap: 78px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .header {
+    &__content {
+      column-gap: 94px;
+    }
+
+    &__content {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+  }
+}
+
 // FOOTER
 
 .footer {
@@ -85,9 +165,6 @@ h2 {
     width: 120px;
     justify-content: center;
     align-items: center;
-    margin: 0 auto -60px;
-    position: relative;
-    top: -60px;
   }
 
   &__logo {
@@ -106,6 +183,68 @@ h2 {
     font-weight: 700;
     line-height: 1.5625rem; /* 25px */
     color: $color-text-link;
+  }
+}
+
+@media (max-width: 699.5px) {
+  .footer__logo-container {
+    margin: 0 auto -60px;
+    position: relative;
+    top: -60px;
+  }
+}
+
+@media (min-width: 700px) {
+  .footer {
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+
+    &__nav {
+      flex-direction: row;
+      margin: 3px 3px 0 0;
+      column-gap: 56px;
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999.5px) {
+  .footer {
+    background-image: linear-gradient(
+      to right,
+      $color-bg-secondary 80%,
+      $color-bg-primary 80%
+    );
+  }
+}
+
+@media (min-width: 1000px) {
+  .footer {
+    margin: 0 98px;
+    justify-content: flex-start;
+    column-gap: 85px;
+    background-image: linear-gradient(
+      to right,
+      $color-bg-secondary 88%,
+      $color-bg-primary 88%
+    );
+
+    .btn-link {
+      margin-left: auto;
+    }
+
+    &__logo-container {
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+
+@media (min-width: 1306px) {
+  .footer {
+    max-width: 1110px;
+    margin: 0 auto;
   }
 }
 
@@ -174,11 +313,53 @@ h2 {
   }
 }
 
+// SIDE TEXT
+
+#container {
+  position: relative;
+}
+
+.side-text {
+  position: absolute;
+  color: #c8ccd8;
+  letter-spacing: 18px;
+  writing-mode: vertical-lr;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+
+  &::before {
+    display: block;
+    content: "";
+    width: 1px;
+    height: 104px;
+    background-color: #c8ccd8;
+    margin-left: 4px;
+  }
+}
+
+@media (max-width: 699.5px) {
+  .side-text {
+    display: none;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1305px) {
+  .side-text {
+    left: calc((98px - 24px) / 2);
+  }
+}
+
+@media (min-width: 1306px) {
+  .side-text {
+    left: calc((100% - 1110px - 24px) / 4);
+  }
+}
+
 // MAIN && SECTIONS
 
 .main {
   margin-bottom: 132px; //72px + 60px
-  margin-top: 96px;
 }
 
 .section {
@@ -191,6 +372,11 @@ h2 {
     span {
       display: block;
     }
+  }
+
+  &__decorative-heading,
+  &__side-img {
+    display: none;
   }
 }
 
@@ -219,17 +405,86 @@ h2 {
   }
 }
 
-@mixin hero-bg($url) {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
+@mixin darkened-bg($url, $darkened: 0.35) {
+  background-image: linear-gradient(
+      rgba(0, 0, 0, $darkened),
+      rgba(0, 0, 0, $darkened)
+    ),
     url($url);
   background-size: cover;
   background-position: center;
 }
 
+@media (max-width: 699.5px) {
+  .main {
+    margin-top: 96px;
+  }
+}
+
+@media (min-width: 700px) {
+  .main {
+    margin: 0 98px 200px;
+  }
+
+  .section__heading {
+    font-size: 4.5rem; /* 72px */
+    line-height: 4rem; /* 64px */
+    letter-spacing: -2px;
+  }
+
+  .section__decorative-heading {
+    display: block;
+    font-family: $font-secondary;
+    font-weight: 700;
+    color: $color-text-tertiary;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 769.5px) {
+  .section__decorative-heading {
+    letter-spacing: -3px;
+    font-size: 102px;
+    line-height: 170px;
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1199.5px) {
+  .section__decorative-heading {
+    letter-spacing: -3px;
+    font-size: 120px;
+    line-height: 200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main--secondary-page {
+    margin-bottom: 160px;
+  }
+
+  .section__decorative-heading {
+    font-family: $font-main;
+    letter-spacing: -5px;
+    font-size: 250px;
+    line-height: 200px;
+  }
+
+  .section__side-img {
+    display: block;
+  }
+}
+
+@media (min-width: 1306px) {
+  .main {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 // HOMEPAGE SECTIONS SPECIFIC STYLES
 
 .section--homepage-project {
-  @include hero-bg("images/image-hero-paramour-375.jpg");
+  @include darkened-bg("images/image-hero-paramour-375.jpg");
   padding: 116px var(--spacing) 110px;
 
   p {
@@ -249,9 +504,10 @@ h2 {
 }
 
 .section--homepage-team {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("images/image-small-team-375.jpg");
+  @include darkened-bg("images/image-small-team-375.jpg", 0.5);
   padding: 181px var(--spacing) 180px;
+  background-size: cover;
+  background-position: center;
 
   .btn-link {
     margin-top: 23px;
@@ -274,29 +530,253 @@ h2 {
   }
 }
 
-// SECONDARY PAGES HERO SECTION
+// bg
+@media (min-width: 376px) and (max-width: 768px) {
+  .section--homepage-project {
+    @include darkened-bg("images/image-hero-paramour-573.jpg");
+  }
 
-.section--secondary-page-intro {
-  margin-bottom: -45px;
+  .section--homepage-team {
+    @include darkened-bg("images/image-small-team-573.jpg", 0.5);
+  }
 }
 
-.section__bg-container {
-  height: 240px;
+// bg
 
+@media (min-width: 769px) {
+  .section--homepage-project {
+    @include darkened-bg("images/image-hero-paramour-1110.jpg");
+  }
+
+  .section--homepage-team {
+    .section--homepage-team {
+      @include darkened-bg("images/image-small-team-573.jpg", 0.5);
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .section--homepage-project {
+    padding: 186px var(--spacing) 179px;
+
+    h2 {
+      font-size: 6rem; /* 96px */
+      line-height: 5rem; /* 80px */
+    }
+
+    p {
+      margin: 10px 0 41px;
+    }
+  }
+
+  .section--homepage-welcome {
+    &::before {
+      display: none;
+    }
+
+    p:first-of-type {
+      margin-top: 43px;
+    }
+  }
+
+  .section--homepage-team {
+    padding: 167px var(--spacing) 168px;
+
+    .btn-link {
+      margin-top: 25px;
+    }
+  }
+
+  .section--homepage-featured {
+    margin: 200px 0 0;
+
+    display: grid;
+    grid-template: auto auto/1fr auto;
+    align-items: center;
+
+    .btn-link {
+      grid-row: 1/2;
+      grid-column: 2/3;
+    }
+
+    .portfolio-projects-container {
+      grid-column: 1/3;
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999.5px) {
+  .section--homepage-welcome {
+    margin: 89px 0 233px;
+  }
+
+  .section--homepage-featured {
+    .portfolio-projects-container {
+      margin: 85px 0 0;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .section--homepage-project {
+    p {
+      max-width: 445px;
+    }
+  }
+
+  .section--homepage-welcome {
+    margin: 108px 0 211px;
+  }
+
+  .section--homepage-featured {
+    .portfolio-projects-container {
+      margin-top: 64px;
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1199.5px) {
+  .section--homepage-welcome {
+    .section__decorative-heading {
+      margin-bottom: -41px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .section--homepage-welcome {
+    .section__main-content {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding-left: var(--spacing);
+      gap: 40px;
+    }
+
+    .section__text-content {
+      max-width: 446px;
+      margin-bottom: 11px;
+    }
+
+    .section__decorative-heading {
+      position: relative;
+      top: 113px;
+      margin-top: -113px;
+    }
+  }
+}
+
+// SECONDARY PAGES HERO SECTION
+
+.section__bg-container {
   .section--about-intro & {
-    @include hero-bg("images/about-hero-375.jpg");
+    @include darkened-bg("images/about-hero-375.jpg");
   }
 }
 
 .section__fg-container {
   background-color: $color-bg-primary;
   position: relative;
-  top: -45px;
   padding: 65px 0 0 var(--spacing);
   margin-right: var(--spacing);
+  @extend %withline;
 
   p {
     margin: 21px 0 0;
+  }
+}
+
+@media (max-width: 699.5px) {
+  .section--secondary-page-intro {
+    margin-bottom: -45px;
+  }
+
+  .section__bg-container {
+    height: 240px;
+  }
+
+  .section__fg-container {
+    top: -45px;
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 700px) {
+  .section--secondary-page-intro {
+    margin: 0;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 200px;
+  }
+
+  .section__bg-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+
+  .section__fg-container {
+    position: relative;
+
+    p {
+      margin-top: 43px;
+      margin-bottom: 2px;
+    }
+
+    .section__decorative-heading {
+      position: absolute;
+      right: 0;
+      top: -85px;
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999.5px) {
+  .section__bg-container {
+    width: 100%;
+
+    .section--about-intro & {
+      @include darkened-bg("images/about-hero-573.jpg");
+    }
+  }
+
+  .section__fg-container {
+    margin: 289px 0 0 58px;
+    padding: 88px 0 0 59px;
+    max-width: 514px;
+
+    &::before {
+      margin-bottom: 73px;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .section__bg-container {
+    width: 57%;
+
+    .section--about-intro & {
+      @include darkened-bg("images/about-hero-635.jpg");
+    }
+  }
+
+  .section__fg-container {
+    max-width: 628px;
+    margin: 217px 0 0 0;
+    padding: 160px 0 0 182px;
+
+    &::before {
+      margin-bottom: 57px;
+    }
+
+    p {
+      margin-top: 59px;
+    }
   }
 }
 
@@ -304,8 +784,11 @@ h2 {
 
 .section--about-heritage {
   margin: 76px var(--spacing) 112px;
-  @extend %withline;
   @extend %para-group;
+
+  .section__text-content {
+    @extend %withline;
+  }
 }
 
 .section--about-leaders {
@@ -381,6 +864,88 @@ h2 {
   }
 }
 
+@media (min-width: 700px) {
+  .section--about-heritage {
+    margin: 0;
+
+    &::before {
+      margin-bottom: 49px;
+    }
+
+    p:first-of-type {
+      margin-top: 67px;
+    }
+  }
+
+  .section--about-leaders {
+    margin: 207px 0 0;
+    padding-bottom: 39px;
+  }
+
+  .team-members-container {
+    flex-flow: row wrap;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999.5px) {
+  .team-members-container {
+    margin-top: 47px;
+    column-gap: 12px;
+    row-gap: 103px;
+  }
+
+  .team-member {
+    width: calc(50% - 6px);
+  }
+}
+
+@media (min-width: 1000px) {
+  .section--about-heritage {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    &::before {
+      margin-bottom: 82px;
+    }
+
+    p:first-of-type {
+      margin-top: 59px;
+    }
+  }
+
+  .section--about-leaders {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 24px;
+    margin-top: 200px;
+    padding: 0;
+  }
+
+  .team-members-container {
+    margin-top: 0;
+    max-width: 730px;
+    column-gap: 30px;
+    row-gap: 63px;
+  }
+
+  .team-member {
+    width: calc(50% - 15px);
+  }
+}
+
+@media (min-width: 1200px) {
+  .section--about-heritage {
+    .section__text-content {
+      width: 40%;
+    }
+
+    .section__side-img {
+      width: 48%;
+    }
+  }
+}
+
 // PORTFOLIO PROJECTS
 
 .portfolio-project {
@@ -406,6 +971,10 @@ h2 {
   &__text {
     opacity: 75%;
   }
+
+  &__number {
+    display: none;
+  }
 }
 
 @mixin project-bg($url) {
@@ -413,8 +982,47 @@ h2 {
     url($url);
 }
 
+@media (min-width: 700px) {
+  .portfolio-project {
+    position: relative;
+
+    &__number {
+      display: block;
+      color: $color-text-inverted;
+      opacity: 50%;
+      font-size: 250px;
+      line-height: 200px;
+      font-weight: 700;
+      letter-spacing: -5px;
+      position: absolute;
+    }
+  }
+}
+
+@media (min-width: 700px) and (max-width: 999.5px) {
+  .portfolio-project__number {
+    top: 29px;
+    right: 16px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .portfolio-project {
+    height: 560px;
+    flex: 1 1 0;
+    padding: 0 40px 39px;
+
+    &__number {
+      top: 45px;
+      right: -16px;
+    }
+  }
+}
+
 // backgrounds
 .portfolio-project {
+  background-size: cover;
+  background-position: center;
   &--del-sol {
     @include project-bg("images/image-del-sol-311.jpg");
   }
@@ -432,4 +1040,41 @@ h2 {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
+}
+
+@media (min-width: 376px) and (max-width: 1000px) {
+  .portfolio-project {
+    &--del-sol {
+      @include project-bg("images/image-del-sol-573.jpg");
+    }
+
+    &--228B {
+      @include project-bg("images/image-228b-573.jpg");
+    }
+
+    &--prototype {
+      @include project-bg("images/image-prototype-573.jpg");
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  .portfolio-projects-container {
+    flex-direction: row;
+    column-gap: 30px;
+  }
+
+  .portfolio-project {
+    &--del-sol {
+      @include project-bg("images/image-del-sol-350.jpg");
+    }
+
+    &--228B {
+      @include project-bg("images/image-228b-350.jpg");
+    }
+
+    &--prototype {
+      @include project-bg("images/image-prototype-350.jpg");
+    }
+  }
 }
