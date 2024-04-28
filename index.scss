@@ -42,6 +42,12 @@ h2 {
 
 .header {
   padding: var(--spacing);
+  position: fixed;
+  z-index: 99;
+  background-color: $color-bg-primary;
+  top: 0;
+  left: 0;
+  width: 100%;
 
   &__content {
     display: flex;
@@ -106,7 +112,30 @@ h2 {
 // MOBILE NAV
 
 .mobile-nav {
-  display: none;
+  background-color: $color-bg-secondary;
+  position: fixed;
+  top: 96px;
+  right: 0;
+  width: calc(100% - var(--spacing));
+  padding: 39px 48px 42px;
+  z-index: 100;
+
+  &--hidden {
+    display: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    display: block;
+    color: $color-text-secondary;
+    font-size: 2rem; /* 32px */
+    line-height: 1.25;
+    font-weight: 700;
+  }
+
+  &__link + &__link {
+    margin-top: 17px;
+  }
 }
 
 // BTN LINKS
@@ -149,6 +178,7 @@ h2 {
 
 .main {
   margin-bottom: 132px; //72px + 60px
+  margin-top: 96px;
 }
 
 .section {

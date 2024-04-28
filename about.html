@@ -25,7 +25,7 @@
             />
           </a>
 
-          <button class="header__open-menu-btn">
+          <button class="header__open-menu-btn" id="open-menu-btn">
             <img
               src="images/icon-hamburger.svg"
               alt="open nav"
@@ -34,6 +34,18 @@
           </button>
         </div>
       </header>
+
+      <nav
+        aria-label="primary"
+        class="mobile-nav mobile-nav--hidden"
+        id="mobile-nav"
+      >
+        <a href="" class="mobile-nav__link">Portfolio</a>
+
+        <a href="about.html" class="mobile-nav__link">About Us</a>
+
+        <a href="" class="mobile-nav__link">Contact</a>
+      </nav>
 
       <main class="main">
         <section
@@ -238,5 +250,6 @@
         /></a>
       </footer>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
