@@ -219,7 +219,7 @@ h2 {
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .footer {
     margin: 0 98px;
     justify-content: flex-start;
@@ -549,9 +549,7 @@ h2 {
   }
 
   .section--homepage-team {
-    .section--homepage-team {
-      @include darkened-bg("images/image-small-team-573.jpg", 0.5);
-    }
+    @include darkened-bg("images/image-small-team-1110.jpg", 0.5);
   }
 }
 
@@ -1054,7 +1052,7 @@ h2 {
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1000px) {
   .portfolio-project {
     height: 560px;
     flex: 1 1 0;
@@ -1072,15 +1070,15 @@ h2 {
   background-size: cover;
   background-position: center;
   &--del-sol {
-    @include project-bg("images/image-del-sol-311.jpg");
+    @include project-bg("images/image-del-sol-450.jpg");
   }
 
   &--228B {
-    @include project-bg("images/image-228b-311.jpg");
+    @include project-bg("images/image-228b-450.jpg");
   }
 
   &--prototype {
-    @include project-bg("images/image-prototype-311.jpg");
+    @include project-bg("images/image-prototype-450.jpg");
   }
 }
 
@@ -1089,19 +1087,35 @@ h2 {
   flex-direction: column;
   row-gap: 24px;
 }
-
-@media (min-width: 376px) and (max-width: 1000px) {
+@media (min-width: 500px) and (max-width: 799.5px) {
   .portfolio-project {
     &--del-sol {
-      @include project-bg("images/image-del-sol-573.jpg");
+      @include project-bg("images/image-del-sol-650.jpg");
     }
 
     &--228B {
-      @include project-bg("images/image-228b-573.jpg");
+      @include project-bg("images/image-228b-650.jpg");
     }
 
     &--prototype {
-      @include project-bg("images/image-prototype-573.jpg");
+      @include project-bg("images/image-prototype-650.jpg");
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .portfolio-project {
+    &--del-sol {
+      @include project-bg("images/image-del-sol-850.jpg");
+      background-position-x: right;
+    }
+
+    &--228B {
+      @include project-bg("images/image-228b-850.jpg");
+    }
+
+    &--prototype {
+      @include project-bg("images/image-prototype-850.jpg");
     }
   }
 }
@@ -1110,19 +1124,5 @@ h2 {
   .portfolio-projects-container {
     flex-direction: row;
     column-gap: 30px;
-  }
-
-  .portfolio-project {
-    &--del-sol {
-      @include project-bg("images/image-del-sol-350.jpg");
-    }
-
-    &--228B {
-      @include project-bg("images/image-228b-350.jpg");
-    }
-
-    &--prototype {
-      @include project-bg("images/image-prototype-350.jpg");
-    }
   }
 }

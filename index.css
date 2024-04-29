@@ -162,7 +162,7 @@ h2 {
     background-image: linear-gradient(to right, #eeeff4 80%, #ffffff 80%);
   }
 }
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .footer {
     margin: 0 98px;
     justify-content: flex-start;
@@ -427,8 +427,8 @@ h2 {
     background-size: cover;
     background-position: center;
   }
-  .section--homepage-team .section--homepage-team {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/image-small-team-573.jpg");
+  .section--homepage-team {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/image-small-team-1110.jpg");
     background-size: cover;
     background-position: center;
   }
@@ -821,7 +821,7 @@ h2 {
     right: 16px;
   }
 }
-@media (min-width: 1100px) {
+@media (min-width: 1000px) {
   .portfolio-project {
     height: 560px;
     flex: 1 1 0;
@@ -837,13 +837,13 @@ h2 {
   background-position: center;
 }
 .portfolio-project--del-sol {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-del-sol-311.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-del-sol-450.jpg");
 }
 .portfolio-project--228B {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-228b-311.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-228b-450.jpg");
 }
 .portfolio-project--prototype {
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-prototype-311.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-prototype-450.jpg");
 }
 
 .portfolio-projects-container {
@@ -852,30 +852,33 @@ h2 {
   row-gap: 24px;
 }
 
-@media (min-width: 376px) and (max-width: 1000px) {
+@media (min-width: 500px) and (max-width: 799.5px) {
   .portfolio-project--del-sol {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-del-sol-573.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-del-sol-650.jpg");
   }
   .portfolio-project--228B {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-228b-573.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-228b-650.jpg");
   }
   .portfolio-project--prototype {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-prototype-573.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-prototype-650.jpg");
+  }
+}
+@media (min-width: 800px) {
+  .portfolio-project--del-sol {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-del-sol-850.jpg");
+    background-position-x: right;
+  }
+  .portfolio-project--228B {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-228b-850.jpg");
+  }
+  .portfolio-project--prototype {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-prototype-850.jpg");
   }
 }
 @media (min-width: 1000px) {
   .portfolio-projects-container {
     flex-direction: row;
     column-gap: 30px;
-  }
-  .portfolio-project--del-sol {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-del-sol-350.jpg");
-  }
-  .portfolio-project--228B {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-228b-350.jpg");
-  }
-  .portfolio-project--prototype {
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/image-prototype-350.jpg");
   }
 }
 
