@@ -720,6 +720,12 @@ h2 {
   }
 }
 
+@media (max-width: 999.5px) {
+  .controls {
+    display: none;
+  }
+}
+
 // SECONDARY PAGES HERO SECTION
 
 .section__bg-container {
