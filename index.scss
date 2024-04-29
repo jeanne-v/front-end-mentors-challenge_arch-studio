@@ -621,6 +621,18 @@ h2 {
   .section--homepage-project {
     p {
       max-width: 445px;
+      margin-bottom: 0;
+    }
+
+    .section__content {
+      height: 355px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .btn-link {
+      margin: auto 0 0;
     }
   }
 
@@ -663,6 +675,42 @@ h2 {
       top: 113px;
       margin-top: -113px;
     }
+  }
+}
+
+// HOMEPAGE CARROUSEL CONTROLS
+
+.section--homepage-project {
+  position: relative;
+}
+
+.controls {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: -80px;
+}
+
+.control {
+  height: 80px;
+  width: 80px;
+  background-color: $color-bg-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-text-link;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+
+  &:hover:not(.control--current) {
+    background-color: $color-bg-secondary;
+  }
+
+  &:active,
+  &--current {
+    background-color: $color-accent;
+    color: $color-text-inverted;
   }
 }
 

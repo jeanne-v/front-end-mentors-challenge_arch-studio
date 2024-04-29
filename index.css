@@ -481,6 +481,16 @@ h2 {
 @media (min-width: 1000px) {
   .section--homepage-project p {
     max-width: 445px;
+    margin-bottom: 0;
+  }
+  .section--homepage-project .section__content {
+    height: 355px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section--homepage-project .btn-link {
+    margin: auto 0 0;
   }
   .section--homepage-welcome {
     margin: 108px 0 211px;
@@ -512,6 +522,37 @@ h2 {
     margin-top: -113px;
   }
 }
+.section--homepage-project {
+  position: relative;
+}
+
+.controls {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  left: -80px;
+}
+
+.control {
+  height: 80px;
+  width: 80px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #7d828f;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+.control:hover:not(.control--current) {
+  background-color: #eeeff4;
+}
+.control:active, .control--current {
+  background-color: #1b1d23;
+  color: #ffffff;
+}
+
 .section--about-intro .section__bg-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("images/about-hero-375.jpg");
   background-size: cover;

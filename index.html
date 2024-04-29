@@ -58,20 +58,34 @@
       </nav>
 
       <main class="main main--homepage">
-        <section class="section section--homepage-project">
-          <h2 class="section__heading">Project <span>Paramour</span></h2>
+        <section
+          class="section section--homepage-project"
+          id="homepage-carrousel"
+        >
+          <div class="section__content">
+            <h2 class="section__heading" id="homepage-carrousel__title">
+              Project <span>Paramour</span>
+            </h2>
 
-          <p>
-            Project made for an art museum near Southwest London. Project
-            Paramour is a statement of bold, modern architecture.
-          </p>
+            <p id="homepage-carrousel__des">
+              Project made for an art museum near Southwest London. Project
+              Paramour is a statement of bold, modern architecture.
+            </p>
 
-          <a href="" class="btn-link"
-            >See Our Portfolio<img
-              class="btn-link__arrow"
-              src="images/icon-arrow.svg"
-              alt=""
-          /></a>
+            <a href="" class="btn-link"
+              >See Our Portfolio<img
+                class="btn-link__arrow"
+                src="images/icon-arrow.svg"
+                alt=""
+            /></a>
+          </div>
+
+          <div class="controls">
+            <button class="control control--current">01</button>
+            <button class="control">02</button>
+            <button class="control">03</button>
+            <button class="control">04</button>
+          </div>
         </section>
 
         <section class="section section--homepage-welcome">
@@ -191,6 +205,6 @@
         /></a>
       </footer>
     </div>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
