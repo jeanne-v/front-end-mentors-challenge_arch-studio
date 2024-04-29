@@ -126,6 +126,10 @@ h2 {
       line-height: 1.5625rem; /* 25px */
       display: inline-block;
       margin-top: 3px;
+
+      &:hover {
+        color: $color-text-secondary;
+      }
     }
   }
 }
@@ -183,6 +187,10 @@ h2 {
     font-weight: 700;
     line-height: 1.5625rem; /* 25px */
     color: $color-text-link;
+
+    &:hover {
+      color: $color-text-secondary;
+    }
   }
 }
 
